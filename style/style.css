@@ -1,0 +1,232 @@
+@import url('https://fonts.cdnfonts.com/css/br-sonoma');
+
+:root {
+  --color-bg: #0a0b10;
+  --color-bg-accent-1: rgba(245, 150, 66, 0.2);
+  --color-bg-accent-2: rgba(255, 202, 69, 0.18);
+  --color-text: #f5f5f5;
+  --color-text-strong: #f7f7f9;
+  --color-text-muted: rgba(245, 245, 245, 0.7);
+  --color-text-soft: rgba(245, 245, 245, 0.55);
+  --color-text-mid: rgba(245, 245, 245, 0.75);
+  --color-placeholder: rgba(255, 255, 255, 0.45);
+  --color-heading: #e9e9ec;
+  --color-stroke: rgba(130, 130, 140, 0.6);
+  --color-card: rgba(24, 21, 20, 0.9);
+  --color-card-border-1: rgba(129, 76, 36, 0.35);
+  --color-card-border-2: rgba(97, 92, 27, 0.162);
+  --color-surface-weak: rgba(255, 255, 255, 0.08);
+  --color-surface-mid: rgba(255, 255, 255, 0.12);
+  --color-surface-strong: rgba(255, 255, 255, 0.2);
+  --color-caret: #ffc98b;
+  --font-accent: #ffc98b;
+  --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-inset: rgba(0, 0, 0, 0.25);
+  --font-body: 'BR Sonoma', sans-serif;                                               
+  --font-heading: 'BR Sonoma', sans-serif;
+}
+
+body {
+  background: radial-gradient(
+      circle at 20% 20%,
+      var(--color-bg-accent-1),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      var(--color-bg-accent-2),
+      transparent 40%
+    ),
+    var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  overflow: hidden;
+}
+
+main {
+  width: min(720px, 90vw);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+}
+
+#rotateHeading {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--font-accent);
+}
+
+.container-2 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 100%;
+  background: linear-gradient(
+        135deg,
+        var(--color-card-border-1),
+        var(--color-card-border-2)
+      )
+      border-box,
+    var(--color-card) padding-box;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 1rem 1.25rem 1.25rem;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 0.75rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.search-form::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-stroke),
+    transparent
+  );
+}
+
+.search-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-surface-weak);
+  border: 1px solid var(--color-surface-mid);
+  box-shadow: inset 0 0 0 1px var(--shadow-inset);
+}
+
+.search-icon::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 4a7 7 0 015.65 11.1l3.62 3.62-1.41 1.41-3.62-3.62A7 7 0 1111 4zm0 2a5 5 0 100 10 5 5 0 000-10z' fill='%23ffffff'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  background: var(--color-text);
+}
+
+.search-form input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  padding: 0.35rem 0;
+  outline: none;
+  caret-color: var(--color-caret);
+}
+
+.search-form input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.search-clear {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-surface-mid);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4L12 13.4 6.4 19 5 17.6 10.6 12 5 6.4 6.4 5z' fill='%23ffffff'/%3E%3C/svg%3E")
+    center / 16px 16px no-repeat;
+}
+
+.search-clear:hover {
+  background-color: var(--color-surface-strong);
+  transform: translateY(-1px);
+}
+
+.search-clear:active {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.search-results {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.results-count {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.15px;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.result-item {
+  padding: 0.35rem 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-muted);
+}
+
+.result-name {
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.result-arrondissement {
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+}

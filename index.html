@@ -4,81 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rues de Paris - Arrondissements</title>
-    <link rel="stylesheet" href="style/style.css">
-    <meta property="og:title" content="🎃 PARIS STREET | par arrondissement" />
-    <meta property="og:description" content="Site cool pour voir les rues par arrondissement dans paris" />
+    <link rel="stylesheet" href="style/style.css" />
+    <meta property="og:title" content="les rues de paris par arrondissement" />
+    <meta
+      property="og:description"
+      content="Site inutile pour voir les rues par arrondissement dans paris"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="" />
     <meta property="og:url" content="https://unrk.github.io/streets/" />
     <meta name="theme-color" content="#f98128" />
   </head>
   <body>
-    <div class="container">
-      <h1>Les Arrondissements de Paris</h1>
-      <div class="arrondissement-list">
-        <button class="btn-arrondissement" data-code="75001">
-          1er - Louvre
-        </button>
-        <button class="btn-arrondissement" data-code="75002">
-          2e - Bourse
-        </button>
-        <button class="btn-arrondissement" data-code="75003">
-          3e - Temple
-        </button>
-        <button class="btn-arrondissement" data-code="75004">
-          4e - Hôtel-de-Ville
-        </button>
-        <button class="btn-arrondissement" data-code="75005">
-          5e - Panthéon
-        </button>
-        <button class="btn-arrondissement" data-code="75006">
-          6e - Luxembourg
-        </button>
-        <button class="btn-arrondissement" data-code="75007">
-          7e - Palais-Bourbon
-        </button>
-        <button class="btn-arrondissement" data-code="75008">
-          8e - Élysée
-        </button>
-        <button class="btn-arrondissement" data-code="75009">9e - Opéra</button>
-        <button class="btn-arrondissement" data-code="75010">
-          10e - Entrepôt
-        </button>
-        <button class="btn-arrondissement" data-code="75011">
-          11e - Popincourt
-        </button>
-        <button class="btn-arrondissement" data-code="75012">
-          12e - Reuilly
-        </button>
-        <button class="btn-arrondissement" data-code="75013">
-          13e - Gobelins
-        </button>
-        <button class="btn-arrondissement" data-code="75014">
-          14e - Observatoire
-        </button>
-        <button class="btn-arrondissement" data-code="75015">
-          15e - Vaugirard
-        </button>
-        <button class="btn-arrondissement" data-code="75016">
-          16e - Passy
-        </button>
-        <button class="btn-arrondissement" data-code="75017">
-          17e - Batignolles-Monceau
-        </button>
-        <button class="btn-arrondissement" data-code="75018">
-          18e - Buttes-Montmartre
-        </button>
-        <button class="btn-arrondissement" data-code="75019">
-          19e - Buttes-Chaumont
-        </button>
-        <button class="btn-arrondissement" data-code="75020">
-          20e - Ménilmontant
-        </button>
-        <button class="btn-arrondissement" data-code="75000">
-          Tout Art. Confondus - Paris
-        </button>
+    <main>
+      <h1>
+        besoin de connaitre
+        <span id="rotateHeading" class="rotatingName"></span>
+      </h1>
+
+      <div class="container-2">
+        <div class="search-bar">
+          <form
+            role="search"
+            aria-label="Recherche d'une rue"
+            class="search-form"
+          >
+            <label for="street-search" class="visually-hidden"
+              >Rechercher</label>
+            <span class="search-icon" aria-hidden="true"></span>
+            <input
+              type="search"
+              id="street-search"
+              name="street"
+              placeholder="Tapez ici votre recherche..."
+              autocomplete="off"
+            />
+            <button
+              type="reset"
+              class="search-clear"
+              aria-label="Effacer la recherche"
+            ></button>
+          </form>
+          <div class="search-results" aria-live="polite"></div>
+        </div>
       </div>
-    </div>
+    </main>
 
     <script src="scripts/app.js"></script>
   </body>
