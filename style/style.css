@@ -41,12 +41,14 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   padding: 24px;
   overflow: hidden;
+  position: relative;
 }
 
 main {
@@ -229,4 +231,23 @@ h1 {
 .result-arrondissement {
   font-size: 0.95rem;
   color: var(--color-text-soft);
+}
+
+
+footer {
+  position: absolute;
+  bottom: 10vh; 
+}
+
+.footer_links {
+  display: flex;
+  gap: 2em;
+}
+
+a:link {
+  color: #e9e9ec;
+}
+
+a:visited {
+  color: #e9e9ec;
 }
